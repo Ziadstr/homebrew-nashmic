@@ -1,8 +1,8 @@
 class Nashmic < Formula
-  desc "The first Franco-Arab programming language — transpiles to C"
+  desc "The first Franco-Arab programming language -- transpiles to C"
   homepage "https://github.com/Ziadstr/nashmic"
-  url "https://github.com/Ziadstr/nashmic/archive/refs/tags/v0.1.0-alpha.tar.gz"
-  sha256 "da316b69ecd25c567aabfd4643a944aa916d2954896600b7d02c8f26e7472c13"
+  url "https://github.com/Ziadstr/nashmic/archive/refs/heads/main.tar.gz"
+  version "0.2.0-dev"
   license "MIT"
   head "https://github.com/Ziadstr/nashmic.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Nashmic < Formula
   end
 
   test do
-    (testpath/"test.nsh").write('dalle yalla() { itba3("marhaba!\n") }')
+    (testpath/"test.nsh").write('yalla() { itba3("marhaba!\\n") }')
     assert_match "marhaba!", shell_output("#{bin}/mansaf run #{testpath}/test.nsh")
   end
 end
